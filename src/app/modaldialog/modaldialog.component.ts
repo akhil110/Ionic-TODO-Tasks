@@ -44,7 +44,7 @@ export class ModaldialogComponent implements OnInit {
       priority: objFrm.priority,
       status: (this.taskId > -1) ? this.otask.status : 'pending'
     };
-    (this.taskId) ? this.db.editTask(this.taskId, objTask) : this.db.addTask(objTask);
+    (this.taskId > -1) ? this.db.editTask(this.taskId, objTask) : this.db.addTask(objTask);
     this.dismiss();
     this.saveToast();
   }
